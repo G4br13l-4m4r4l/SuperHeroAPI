@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SuperHeroApi.Context;
+using SuperHeroApi.Filters;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +17,9 @@ builder.Services.AddDbContext<HeroDbContext>(options =>
 {
     options.UseMySql(mySqlConnection, ServerVersion.AutoDetect(mySqlConnection));
 });
+
+//Adicionando filtros
+builder.Services.AddScoped<ApiLogginFilter>();
 
 var app = builder.Build();
 

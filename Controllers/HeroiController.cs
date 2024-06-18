@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SuperHeroApi.Context;
+using SuperHeroApi.Filters;
 using SuperHeroApi.Models;
 
 namespace SuperHeroApi.Controllers
@@ -20,6 +21,7 @@ namespace SuperHeroApi.Controllers
         }
 
         [HttpGet]
+        [ServiceFilter(typeof(ApiLogginFilter))]
         public ActionResult<IEnumerable<Heroi>> GetAll()
         {
             return _context.Heroi.AsNoTracking().Where(h => h.Id <= 7).ToList();
@@ -33,6 +35,7 @@ namespace SuperHeroApi.Controllers
             return Ok(hero);
         }
         [HttpPost]
+        [ServiceFilter(typeof(ApiLogginFilter))]
         public ActionResult CadastrarHeroi(Heroi heroi)
         {
             if (heroi == null) return BadRequest("Cadastro está nulo! Tente novamente...");
@@ -42,6 +45,7 @@ namespace SuperHeroApi.Controllers
             return Ok(heroi);
         }
         [HttpPut("{id:int}")]
+        [ServiceFilter(typeof(ApiLogginFilter))]
         public ActionResult AtualizarHeroi(int id, Heroi heroi)
         {
             if (heroi.Id != id) return BadRequest("Atualização inválida...");
@@ -53,6 +57,7 @@ namespace SuperHeroApi.Controllers
         }
 
         [HttpDelete("{id:int}")]
+        [ServiceFilter(typeof(ApiLogginFilter))]
         public ActionResult DeletarHeroi(int id) {
             Console.WriteLine("Configuração: " + _configuration["chaveTeste:chaveUnica"]);
 

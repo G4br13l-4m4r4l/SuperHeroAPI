@@ -102,3 +102,4 @@ C:\Users\L4g_1n\Documents\DotNet\SuperHero\SuperHeroApi\obj\Debug\net8.0\refint\
 C:\Users\L4g_1n\Documents\DotNet\SuperHero\SuperHeroApi\obj\Debug\net8.0\SuperHeroApi.pdb
 C:\Users\L4g_1n\Documents\DotNet\SuperHero\SuperHeroApi\obj\Debug\net8.0\SuperHeroApi.genruntimeconfig.cache
 C:\Users\L4g_1n\Documents\DotNet\SuperHero\SuperHeroApi\obj\Debug\net8.0\ref\SuperHeroApi.dll
+C:\Users\L4g_1n\Documents\DotNet\SuperHero\SuperHeroAPI\obj\Debug\net8.0\SuperHeroApi.sourcelink.json
